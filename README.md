@@ -1,1 +1,2 @@
 # connected_term
+2023_1학기_컨넥티드플랫폼이론과실제_Term_Project_안조최
