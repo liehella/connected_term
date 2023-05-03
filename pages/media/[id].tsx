@@ -1,6 +1,7 @@
 import Layout from "@/components/layout";
 import { withRouter } from "next/router";
 import { useEffect, useState } from "react";
+import React from "react";
 import ReactPlayer from "react-player";
 
 const urls = [
@@ -22,7 +23,7 @@ const urls = [
   "https://d3rlna7iyyu8wu.cloudfront.net/skip_armstrong/skip_armstrong_stereo_subs.m3u8",
 ];
 
-function movie({ router: { query } }) {
+function media({ router: { query } }) {
   const [num, setNum] = useState(100);
   const [loading, setLoading] = useState(true);
 
@@ -51,4 +52,4 @@ function movie({ router: { query } }) {
   );
 }
 
-export default withRouter(movie);
+export default withRouter(media);
