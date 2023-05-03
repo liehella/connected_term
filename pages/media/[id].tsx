@@ -34,10 +34,10 @@ function movie({ router: { query } }) {
   return (
     <Layout>
       {loading ? (
-        "loading"
+        "loading..."
       ) : (
-        <div>
-          <div>media {num + 1}</div>
+        <div className="flex flex-col items-center">
+          <div className="p-4 text-xl">Media {num + 1}</div>
           <ReactPlayer
             url={urls[num]}
             width="800px"

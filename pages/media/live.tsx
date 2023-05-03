@@ -8,7 +8,7 @@ const LIVEURL =
 export default function test() {
   return (
     <Layout>
-      <div>Live</div>
+      <div className="p-4 text-xl">Live</div>
       <ReactPlayer url={LIVEURL} width="800px" height="500px" controls={true} />
     </Layout>
   );

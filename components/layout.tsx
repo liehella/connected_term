@@ -14,7 +14,7 @@ export default function Layout({ children }: LayoutProps) {
         <div></div>
         <Link href={"/"}>STallerBurgs</Link>
       </div>
-      <div>{children}</div>
+      <div className="flex flex-col items-center">{children}</div>
     </div>
   );
 }
