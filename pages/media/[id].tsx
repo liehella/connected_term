@@ -1,5 +1,5 @@
 import Layout from "@/components/layout";
-import { withRouter } from "next/router";
+import { NextRouter, withRouter } from "next/router";
 import { useEffect, useState } from "react";
 import React from "react";
 import ReactPlayer from "react-player";
@@ -23,13 +23,17 @@ const urls = [
   "https://d3rlna7iyyu8wu.cloudfront.net/skip_armstrong/skip_armstrong_stereo_subs.m3u8",
 ];
 
-function media({ router: { query } }) {
+interface Query {
+  router: NextRouter;
+}
+
+function Media({ router: { query } }: Query) {
   const [num, setNum] = useState(100);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setNum(+query.id - 1);
-    setLoading(false);
+    query.id ? setNum(+query.id - 1) : "";
+    query.id ? setLoading(false) : "";
   }, [query]);
 
   return (
@@ -52,4 +56,4 @@ function media({ router: { query } }) {
   );
 }
 
-export default withRouter(media);
+export default withRouter(Media);
