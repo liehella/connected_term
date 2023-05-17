@@ -34,9 +34,9 @@ function Media({ router: { query } }: Query) {
       setHasWindow(true);
     }
   }, []);
-  const videoRef = useRef();
+  const videoRef = useRef<ReactPlayer>(null);
   const [state, setState] = useState({
-    playing: true,
+    playing: false,
     muted: false,
     controls: true,
     volume: 0.5,
@@ -69,7 +69,7 @@ function Media({ router: { query } }: Query) {
 
   return (
     <Layout>
-      {hasWindow && (
+      {hasWindow && query.id && (
         <div className="flex flex-col items-center">
           <div className="p-4 text-xl">Media {+query.id}</div>
           <div className="w-[40rem] lg:w-[80rem]">
@@ -90,13 +90,14 @@ function Media({ router: { query } }: Query) {
                 },
               }}
               onReady={() => {
-                console.log(videoRef.current.getInternalPlayer("hls"));
+                videoRef.current &&
+                  console.log(videoRef.current.getInternalPlayer("hls"));
                 //level controller 안에 _levels 조절로 해상도 조절
               }}
             />
           </div>
 
-          <div className="space-x-2">
+          <div className="space-x-4 pt-5 text-xl">
             <button onClick={pbSlower}>0.5배속</button>
             <button onClick={pbNormal}>1배속</button>
             <button onClick={pbFaster}>2배속</button>
