@@ -1,6 +1,6 @@
 import Layout from "@/components/layout";
 import { NextRouter, withRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import React from "react";
 import ReactPlayer from "react-player";
 
@@ -28,28 +28,79 @@ interface Query {
 }
 
 function Media({ router: { query } }: Query) {
-  const [num, setNum] = useState(100);
-  const [loading, setLoading] = useState(true);
-
+  const [hasWindow, setHasWindow] = useState(false);
   useEffect(() => {
-    query.id ? setNum(+query.id - 1) : "";
-    query.id ? setLoading(false) : "";
-  }, [query]);
+    if (typeof window !== "undefined") {
+      setHasWindow(true);
+    }
+  }, []);
+  const videoRef = useRef();
+  const [state, setState] = useState({
+    playing: true,
+    muted: false,
+    controls: true,
+    volume: 0.5,
+    playbackRate: 1.0,
+    played: 0,
+    seeking: false,
+    duration: 0,
+  });
+
+  const { playing, muted, volume, playbackRate, played } = state;
+
+  const pbFaster = () => {
+    setState({
+      ...state,
+      playbackRate: 2,
+    });
+  };
+  const pbNormal = () => {
+    setState({
+      ...state,
+      playbackRate: 1,
+    });
+  };
+  const pbSlower = () => {
+    setState({
+      ...state,
+      playbackRate: 0.5,
+    });
+  };
 
   return (
     <Layout>
-      {loading ? (
-        "loading..."
-      ) : (
+      {hasWindow && (
         <div className="flex flex-col items-center">
-          <div className="p-4 text-xl">Media {num + 1}</div>
-          <ReactPlayer
-            url={urls[num]}
-            width="800px"
-            height="500px"
-            controls={true}
-          />
-          <div></div>
+          <div className="p-4 text-xl">Media {+query.id}</div>
+          <div className="w-[40rem] lg:w-[80rem]">
+            <ReactPlayer
+              url={urls[+query.id - 1]}
+              ref={videoRef}
+              width="100%"
+              height="100%"
+              controls={true}
+              playing={playing}
+              muted={muted}
+              volume={volume}
+              playbackRate={playbackRate}
+              config={{
+                file: {
+                  forceHLS: true,
+                  hlsOptions: {},
+                },
+              }}
+              onReady={() => {
+                console.log(videoRef.current.getInternalPlayer("hls"));
+                //level controller 안에 _levels 조절로 해상도 조절
+              }}
+            />
+          </div>
+
+          <div className="space-x-2">
+            <button onClick={pbSlower}>0.5배속</button>
+            <button onClick={pbNormal}>1배속</button>
+            <button onClick={pbFaster}>2배속</button>
+          </div>
         </div>
       )}
     </Layout>
