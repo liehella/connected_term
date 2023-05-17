@@ -51,7 +51,7 @@ export default function Live() {
       {hasWindow && (
         <div className="flex flex-col items-center">
           <div className="p-4 text-xl">Live</div>
-          <div className="w-[20rem] lg:w-[80rem]">
+          <div className="w-[20rem] lg:w-[50rem]">
             <ReactPlayer
               url={LIVEURL}
               ref={videoRef}

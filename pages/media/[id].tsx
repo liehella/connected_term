@@ -72,7 +72,7 @@ function Media({ router: { query } }: Query) {
       {hasWindow && query.id && (
         <div className="flex flex-col items-center">
           <div className="p-4 text-xl">Media {+query.id}</div>
-          <div className="w-[20rem] lg:w-[80rem]">
+          <div className="w-[20rem] lg:w-[50rem]">
             <ReactPlayer
               url={urls[+query.id - 1]}
               ref={videoRef}
