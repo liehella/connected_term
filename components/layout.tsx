@@ -9,7 +9,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className={`min-h-screen bg-slate-200 px-10 pt-6 ${inter.className}`}>
+    <div
+      className={`min-h-screen bg-slate-200 px-1 pt-6 lg:px-10 ${inter.className}`}
+    >
       <div className="fixed right-10">
         <Link href={"/"}>STallerBurgs</Link>
       </div>

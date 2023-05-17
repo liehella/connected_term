@@ -35,7 +35,7 @@ export default function Home() {
                 href={{ pathname: `/media/${i}`, query: { id: i } }}
                 as={`/media/${i + 1}`}
               >
-                <div className="aspect-[2/3] h-40 bg-black text-center text-white lg:h-60">
+                <div className="h-25 aspect-square bg-black text-center text-white lg:aspect-[2/3] lg:h-60">
                   {i + 1}
                   <ReactPlayer
                     className="absoulte"
@@ -57,7 +57,7 @@ export default function Home() {
             )
           )}
           <Link href={`/media/live`}>
-            <div className="aspect-[2/3] h-40 bg-black text-center text-white lg:h-60">
+            <div className="h-25 aspect-square bg-black text-center text-white lg:aspect-[2/3] lg:h-60">
               LIVE
               <ReactPlayer
                 className=""
