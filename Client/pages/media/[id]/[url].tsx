@@ -4,25 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import React from "react";
 import ReactPlayer from "react-player";
 
-const urls = [
-  "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
-  "https://cdn.jwplayer.com/manifests/pZxWPRg4.m3u8",
-  "https://test-streams.mux.dev/test_001/stream.m3u8",
-  "https://test-streams.mux.dev/dai-discontinuity-deltatre/manifest.m3u8",
-  "https://playertest.longtailvideo.com/adaptive/issue666/playlists/cisq0gim60007xzvi505emlxx.m3u8",
-  "https://playertest.longtailvideo.com/adaptive/captions/playlist.m3u8",
-  "https://playertest.longtailvideo.com/adaptive/oceans_aes/oceans_aes.m3u8",
-  "https://playertest.longtailvideo.com/adaptive/vod-with-mp3/manifest.m3u8",
-  "https://storage.googleapis.com/shaka-demo-assets/angel-one-hls/hls.m3u8",
-  "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-  "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
-  "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8",
-  "https://cdn.theoplayer.com/video/elephants-dream/playlist.m3u8",
-  "https://test-streams.mux.dev/pts_shift/master.m3u8",
-  "https://playertest.longtailvideo.com/adaptive/artbeats/manifest.m3u8",
-  "https://d3rlna7iyyu8wu.cloudfront.net/skip_armstrong/skip_armstrong_stereo_subs.m3u8",
-];
-
 interface Query {
   router: NextRouter;
 }
@@ -66,7 +47,7 @@ function Media({ router: { query } }: Query) {
       playbackRate: 0.5,
     });
   };
-
+  const myUrl:string = decodeURIComponent(query.url as string);
   return (
     <Layout>
       {hasWindow && query.id && (
@@ -74,7 +55,7 @@ function Media({ router: { query } }: Query) {
           <div className="p-4 text-xl">Media {+query.id}</div>
           <div className="w-[20rem] lg:w-[50rem]">
             <ReactPlayer
-              url={urls[+query.id - 1]}
+              url={query.url}
               ref={videoRef}
               width="100%"
               height="100%"
@@ -101,6 +82,9 @@ function Media({ router: { query } }: Query) {
             <button onClick={pbSlower}>0.5배속</button>
             <button onClick={pbNormal}>1배속</button>
             <button onClick={pbFaster}>2배속</button>
+          </div>
+          <div>
+
           </div>
         </div>
       )}

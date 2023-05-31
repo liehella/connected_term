@@ -1,11 +1,13 @@
 import Layout from "@/components/layout";
 import React, { useEffect, useRef, useState } from "react";
 import ReactPlayer from "react-player";
+import * as querystring from "querystring";
+import { NextRouter, withRouter } from "next/router";
+interface Query {
+  router: NextRouter;
+}
 
-const LIVEURL =
-  "https://cdn-vos-ppp-01.vos360.video/Content/HLS_HLSCLEAR/Live/channel(PPP-LL-2HLS)/index.m3u8";
-
-export default function Live() {
+export default function Live({ router: { query } }: Query) {
   const [hasWindow, setHasWindow] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -53,7 +55,7 @@ export default function Live() {
           <div className="p-4 text-xl">Live</div>
           <div className="w-[20rem] lg:w-[50rem]">
             <ReactPlayer
-              url={LIVEURL}
+              url={query.url}
               ref={videoRef}
               width="100%"
               height="100%"
