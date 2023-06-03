@@ -16,6 +16,7 @@ function Media({ router: { query } }: Query) {
     }
   }, []);
   const videoRef = useRef<ReactPlayer>(null);
+  const [videoReady, setVideoReady] = useState(false);
   const [state, setState] = useState({
     playing: false,
     muted: false,
@@ -27,27 +28,24 @@ function Media({ router: { query } }: Query) {
     duration: 0,
   });
 
-  const { playing, muted, volume, playbackRate, played } = state;
+  const { playing, muted, volume, playbackRate } = state;
 
-  const pbFaster = () => {
+  const onChangePlaybackrate = (event: any) => {
     setState({
       ...state,
-      playbackRate: 2,
+      playbackRate: 1 * event.target.value,
     });
   };
-  const pbNormal = () => {
-    setState({
-      ...state,
-      playbackRate: 1,
-    });
+
+  const onChangeBitrate = (event: any) => {
+    const internalPlayer = videoRef.current?.getInternalPlayer("hls");
+    if (internalPlayer) {
+      // currentLevel expect to receive an index of the levels array
+      internalPlayer.currentLevel = 1 * event.target.value;
+    }
   };
-  const pbSlower = () => {
-    setState({
-      ...state,
-      playbackRate: 0.5,
-    });
-  };
-  const myUrl:string = decodeURIComponent(query.url as string);
+
+  const myUrl: string = decodeURIComponent(query.url as string);
   return (
     <Layout>
       {hasWindow && query.id && (
@@ -71,20 +69,36 @@ function Media({ router: { query } }: Query) {
                 },
               }}
               onReady={() => {
-                videoRef.current &&
-                  console.log(videoRef.current.getInternalPlayer("hls"));
-                //level controller 안에 _levels 조절로 해상도 조절
+                console.log(videoRef.current?.getInternalPlayer("hls").levels);
+                setVideoReady(true);
               }}
             />
           </div>
-
-          <div className="space-x-4 pt-5 text-xl">
-            <button onClick={pbSlower}>0.5배속</button>
-            <button onClick={pbNormal}>1배속</button>
-            <button onClick={pbFaster}>2배속</button>
-          </div>
-          <div>
-
+          <div className="space-y-2 pt-2 text-center">
+            <div>
+              PlaybackRate:
+              <select onChange={onChangePlaybackrate}>
+                {[0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2].map((rate, id) => (
+                  <option key={id} value={rate}>
+                    {rate}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              Quality:
+              <select onChange={onChangeBitrate}>
+                {videoReady &&
+                  videoRef.current
+                    ?.getInternalPlayer("hls")
+                    ?.levels.map((level: any, id: number) => (
+                      <option key={id} value={id}>
+                        {level.width}x{level.height}
+                      </option>
+                    ))}
+              </select>
+            </div>
+            <div>check console to look streaming quality data</div>
           </div>
         </div>
       )}
