@@ -13,19 +13,32 @@ export default function Home() {
   const [LiveUrls, setLive] = useState([]);
   useEffect(() => {
     const fetchData = async() => {
-      const res = await fetch('http://localhost:3001/urls?type=VOD');
+      const res = await fetch('http://localhost:3001/urls?type=VOD',{
+        method:"GET",
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': "no-cache, no-store, must-revalidate"
+        }
+      });
       const result = res.json();
       return result;
     }
     fetchData().then(res => setVOD(res.urls));
 
     const fetchData2 = async() => {
-      const res = await fetch('http://localhost:3001/urls?type=LIVE');
+      const res = await fetch('http://localhost:3001/urls?type=LIVE',{
+        method:"GET",
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': "no-cache, no-store, must-revalidate"
+        }
+      });
       const result = res.json();
       return result;
     }
     fetchData2().then(res => setLive(res.urls));
   }, []);
+
 
   return (
     <Layout>
@@ -97,7 +110,13 @@ export default function Home() {
               )
               }
           )}
-
+          <Link
+              key={200}
+              href={{ pathname: `/analysis/list`}}
+              as = {`/analysis/list`}
+          >
+            데이터 분석
+          </Link>
         </div>
       </div>
     </Layout>

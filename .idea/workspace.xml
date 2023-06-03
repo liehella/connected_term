@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="64b2ab0c-731b-4456-b147-17bea808eaa8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Client/pages/analysis/[url].tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/pages/analysis/list.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/controllers/playedInfoContorller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/models/playedInfos.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routes/playedInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/pages/media/[id]/[url].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/pages/media/[id]/[url].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/lib/read.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/lib/read.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/lib/types/json.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/lib/types/json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/lib/types/urlencoded.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/lib/types/urlencoded.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/bytes/History.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/bytes/History.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/bytes/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/bytes/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/bytes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/bytes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/bytes/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/bytes/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/Changelog.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/Changelog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/sbcs-codec.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/sbcs-codec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/sbcs-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/sbcs-data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/raw-body/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/raw-body/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/raw-body/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/raw-body/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/raw-body/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/raw-body/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/raw-body/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/raw-body/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/raw-body/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/raw-body/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Qam0NYbNi4NBNzCIyB5S2EcLq3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/College/23-1/Connected/TermProject/connected_term&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\College\\23-1\\Connected\\TermProject\\connected_term\\Client\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\College\23-1\Connected\TermProject\connected_term\Client\pages\analysis" />
+      <recent name="D:\College\23-1\Connected\TermProject\connected_term\Client\pages\analysis\chart" />
+      <recent name="D:\College\23-1\Connected\TermProject\connected_term\Client\pages\api" />
+      <recent name="D:\College\23-1\Connected\TermProject\connected_term\Client\pages\analysis\[VODs]" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="64b2ab0c-731b-4456-b147-17bea808eaa8" name="Changes" comment="" />
+      <created>1685599842801</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685599842801</updated>
+      <workItem from="1685599844705" duration="1470000" />
+      <workItem from="1685601627108" duration="524000" />
+      <workItem from="1685635530535" duration="2529000" />
+      <workItem from="1685639278011" duration="94000" />
+      <workItem from="1685788647969" duration="16490000" />
+      <workItem from="1685814587275" duration="7315000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

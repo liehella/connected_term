@@ -42,6 +42,30 @@ function Media({ router: { query } }: Query) {
     if (internalPlayer) {
       // currentLevel expect to receive an index of the levels array
       internalPlayer.currentLevel = 1 * event.target.value;
+      const currentVideo = internalPlayer.levels[internalPlayer.currentLevel];
+      //level.width, level.height level.bitrate
+      const endOfUrl = currentVideo.url[0].lastIndexOf('/',currentVideo.url[0].lastIndexOf('/')-1);
+      const url = currentVideo.url[0].substring(0,endOfUrl);
+
+      const data={
+        url:myUrl,
+        width:currentVideo.width,
+        height:currentVideo.height,
+        bitrate:currentVideo.bitrate,
+        time:Date()
+      }
+      console.log(data);
+
+      fetch('http://localhost:3001/playedInfo',{
+        method:'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': "no-cache, no-store, must-revalidate"
+        },
+        body:JSON.stringify(data)
+      });
+
+
     }
   };
 
