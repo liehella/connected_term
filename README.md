@@ -23,7 +23,7 @@ npm start
 
 <hr/>
 
-# 소프트웨어 아키텍처 문서
+# Software Architecture Document
 
 ## 1. Introduction
 ### 1.1 문서 목적
