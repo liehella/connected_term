@@ -15,6 +15,13 @@ npm run dev
 cd ./server
 npm install
 npm start
+ctrl+c
+생성된 DB videos 테이블에 url.json 적용
+npm start
+
+#### test 실행
+cd ./server
+npm test ./app.test.js
 
 <hr/>
 
