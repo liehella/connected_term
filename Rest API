@@ -1,7 +1,27 @@
 #API Reference
 
-##1. NEXT.JS
+## NEXT.JS
 React로 만드는 서버 사이드 렌더링 프레임워크
 
-##2. Tailwind
+##Tailwind
 HTML에서 CSS편하게 작업하는 프레임 워크
+
+##http://localhost:3001/urls
+method GET
+query
+type:string
+header
+'Cache-Control': "no-cache, no-store, must-revalidate"
+
+return
+타입에 맞는 url string배열
+
+##http://localhost:3001/playedInfo
+method POST
+header 'Cache-Control': "no-cache, no-store, must-revalidate"
+request
+url string
+width,height,bitrate: number
+time: Date
+
+데이터 저장 용도
