@@ -7,20 +7,20 @@
 
 
 #### Client 실행
-cd ./Client
-npm install
+cd ./Client<br>
+npm install<br>
 npm run dev
 
 #### Server 실행
-cd ./server
-npm install
-npm start
-ctrl+c
-생성된 DB videos 테이블에 url.json 적용
-npm start
+cd ./server<br>
+npm install<br>
+npm start<br>
+ctrl+c<br>
+생성된 DB videos 테이블에 url.json 적용<br>
+npm start<br>
 
 #### test 실행
-cd ./server
+cd ./server<br>
 npm test ./app.test.js
 
 <hr/>
