@@ -6,6 +6,16 @@
 #### 중간 산출물 링크 https://stallerburgs-dzv123.vercel.app/
 
 
+#### Client 실행
+cd ./Client
+npm install
+npm run dev
+
+#### Server 실행
+cd ./server
+npm install
+npm start
+
 <hr/>
 
 5/31 현재 진행상황
@@ -13,10 +23,6 @@
 중간 산출물 링크는 클라이언트 상에 데이터가 있지만
 실제 깃허브 코드에서는 서버에서 데이터를 가져올 수 있다.
 
-#### Client 실행
-cd ./Client
-npm run dev
 
-#### Server 실행
-cd ./server
-npm start
+6/4
+서버 통신, 통계 그래프 완성

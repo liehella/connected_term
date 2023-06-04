@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64b2ab0c-731b-4456-b147-17bea808eaa8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/controllers/analysisController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routes/analysis.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/pages/analysis/[url].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/pages/analysis/[url].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/pages/analysis/list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/pages/analysis/list.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +69,7 @@
       <workItem from="1685639278011" duration="94000" />
       <workItem from="1685788647969" duration="16490000" />
       <workItem from="1685814587275" duration="7315000" />
-      <workItem from="1685869494608" duration="12901000" />
+      <workItem from="1685869494608" duration="13066000" />
     </task>
     <servers />
   </component>
