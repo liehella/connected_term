@@ -25,9 +25,11 @@ app.use(cors());
 const indexRouter = require('./routes/index');
 const UrlRouter = require('./routes/urls');
 const PlayedInfoRouter = require('./routes/playedInfo');
+const AnalysisRouter = require('./routes/analysis');
 app.use('/', indexRouter);
 app.use('/urls', UrlRouter);
 app.use('/playedInfo',PlayedInfoRouter);
+app.use('/analysis',AnalysisRouter);
 
 
 // catch 404 and forward to error handler

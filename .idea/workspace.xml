@@ -5,38 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64b2ab0c-731b-4456-b147-17bea808eaa8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Client/pages/analysis/[url].tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/pages/analysis/list.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/controllers/playedInfoContorller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/playedInfos.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routes/playedInfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/controllers/analysisController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routes/analysis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/pages/analysis/[url].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/pages/analysis/[url].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/pages/analysis/list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/pages/analysis/list.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/pages/media/[id]/[url].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/pages/media/[id]/[url].tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/HISTORY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/lib/read.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/lib/read.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/lib/types/json.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/lib/types/json.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/lib/types/urlencoded.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/lib/types/urlencoded.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/bytes/History.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/bytes/History.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/bytes/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/bytes/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/bytes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/bytes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/bytes/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/bytes/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/Changelog.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/Changelog.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/sbcs-codec.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/sbcs-codec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/sbcs-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/sbcs-data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/raw-body/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/raw-body/HISTORY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/raw-body/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/raw-body/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/raw-body/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/raw-body/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/raw-body/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/raw-body/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/raw-body/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/raw-body/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="TypeScript JSX File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -99,6 +76,7 @@
       <workItem from="1685639278011" duration="94000" />
       <workItem from="1685788647969" duration="16490000" />
       <workItem from="1685814587275" duration="7315000" />
+      <workItem from="1685869494608" duration="12901000" />
     </task>
     <servers />
   </component>

@@ -8,18 +8,18 @@ import Link from "next/link";
 export default function List(){
     const [VODUrls, setVOD] = useState([]);
     const [LiveUrls, setLive] = useState([]);
-    const [EncodedUrls, setEncoded] = useState([])
-    useEffect(() => {
+    const [countList, setCountList] = useState([] as number[]);
+
+    const FetchUrls = () => {
         const entries = performance.getEntriesByType("navigation")[0];
         const entriesNavigationTiming = entries as PerformanceNavigationTiming
         console.log(entriesNavigationTiming.type);
-        if(entriesNavigationTiming.type!="reload"){
-
+        if(entriesNavigationTiming.type != "reload"){
             window.location.reload();
         }
-        const fetchData = async() => {
-            const res = await fetch('http://localhost:3001/urls?type=VOD',{
-                method:"GET",
+        const fetchData = async () => {
+            const res = await fetch('http://localhost:3001/urls?type=VOD', {
+                method: "GET",
                 headers: {
                     'Content-Type': 'application/json',
                     'Cache-Control': "no-cache, no-store, must-revalidate"
@@ -28,17 +28,11 @@ export default function List(){
             const result = res.json();
             return result;
         }
-        fetchData().then(res => setVOD(res.urls)).then(()=>{
-            const Encoded = [];
-            VODUrls.map((_,i)=>{
-                Encoded.push(encodeURIComponent(VODUrls[i]));
-            })
-            setEncoded(Encoded);
-        });
+        fetchData().then(res => setVOD(res.urls));
 
-        const fetchData2 = async() => {
-            const res = await fetch('http://localhost:3001/urls?type=LIVE',{
-                method:"GET",
+        const fetchData2 = async () => {
+            const res = await fetch('http://localhost:3001/urls?type=LIVE', {
+                method: "GET",
                 headers: {
                     'Content-Type': 'application/json',
                     'Cache-Control': "no-cache, no-store, must-revalidate"
@@ -48,7 +42,43 @@ export default function List(){
             return result;
         }
         fetchData2().then(res => setLive(res.urls));
+    }
+    useEffect(()=>{
+        FetchUrls()
     }, []);
+
+    const FetchCount = async() => {
+        const list = [] as number[];
+        await Promise.all(
+            VODUrls.map(async (_, i) => {
+                const res = await fetch(`http://localhost:3001/analysis/count?url=${encodeURIComponent(VODUrls[i])}`, {
+                    method: "GET",
+                });
+                const result = await (res.json());
+                console.log("result",result.count);
+                list.push(result.count);
+            })
+        )
+        await Promise.all(
+            LiveUrls.map(async (_, i) => {
+                const res = await fetch(`http://localhost:3001/analysis/count?url=${encodeURIComponent(LiveUrls[i])}`, {
+                    method: "GET",
+                });
+                const result = await (res.json());
+                list.push(result.count);
+            })
+        )
+        setCountList(list);
+    }
+    useEffect(()=>{
+        FetchCount();
+    },[VODUrls, LiveUrls]);
+
+
+
+
+
+
     return(
         <Layout>
             <div className="flex flex-col items-center">
@@ -58,13 +88,14 @@ export default function List(){
                         <tbody>
                         {VODUrls.map(
                             (_, i) => {
+                                const encodedUrl = encodeURIComponent(VODUrls[i]);
                                 return (
                                     <tr>
                                         <td>
                                             <Link
                                                 key={i+20}
-                                                href={{ pathname: `/analysis/${EncodedUrls[i]}`, query: { id: i, url:EncodedUrls[i]}}}
-                                                as={`/analysis/${EncodedUrls[i]}`}
+                                                href={{ pathname: `/analysis/${encodedUrl}`, query: { id: i, url:encodedUrl}}}
+                                                as={`/analysis/${encodedUrl}`}
 
                                             >
                                                 <div className="h-25 aspect-square bg-black text-center text-white lg:aspect-[2/3] lg:h-60">
@@ -88,7 +119,7 @@ export default function List(){
                                             </Link>
                                         </td>
                                         <td>
-                                            조회수
+                                            {countList[i]}
                                         </td>
                                     </tr>
 
@@ -96,14 +127,15 @@ export default function List(){
                         )}
                         {LiveUrls.map(
                             (_, i) => {
-                                let liveIdx:number = i +VODUrls.length;
+                                const liveIdx:number = i +VODUrls.length;
+                                const encodedUrl = encodeURIComponent(VODUrls[i]);
                                 return(
                                     <tr>
                                         <td>
                                             <Link
                                                 key={liveIdx+20}
-                                                href={{ pathname: `/media/${EncodedUrls[i]}`, query: { id: liveIdx, url:EncodedUrls[i] } }}
-                                                as={`/media/${EncodedUrls[i]}`}
+                                                href={{ pathname: `/analysis/${encodedUrl}`, query: { id: liveIdx, url:encodedUrl } }}
+                                                as={`/media/${encodedUrl}`}
                                             >
                                                 <div className="h-25 aspect-square bg-black text-center text-white lg:aspect-[2/3] lg:h-60">
                                                     {liveIdx + 1}
@@ -125,6 +157,9 @@ export default function List(){
                                                 </div>
                                             </Link>
                                         </td>
+                                        <td>
+                                            {countList[i+VODUrls.length]}
+                                        </td>
                                     </tr>
                                 )
                             }
@@ -133,7 +168,6 @@ export default function List(){
                     </table>
                     <Link
                         href={{ pathname: `../` }}
-
                         replace
                     >
                         뒤로가기

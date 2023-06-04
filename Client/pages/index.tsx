@@ -11,6 +11,7 @@ import {useRouter} from "next/router";
 export default function Home() {
   const [VODUrls, setVOD] = useState([]);
   const [LiveUrls, setLive] = useState([]);
+
   useEffect(() => {
     const fetchData = async() => {
       const res = await fetch('http://localhost:3001/urls?type=VOD',{
