@@ -1,12 +1,15 @@
 #API Reference
 
-## NEXT.JS
+## 1 
+NEXT.JS
 React로 만드는 서버 사이드 렌더링 프레임워크
 
-##Tailwind
+## 2
+Tailwind
 HTML에서 CSS편하게 작업하는 프레임 워크
 
-##http://localhost:3001/urls
+## 3
+http://localhost:3001/urls
 method GET
 query
 type:string
@@ -16,7 +19,8 @@ header
 return
 타입에 맞는 url string배열
 
-##http://localhost:3001/playedInfo
+## 4
+http://localhost:3001/playedInfo
 method POST
 header 'Cache-Control': "no-cache, no-store, must-revalidate"
 request
@@ -24,4 +28,31 @@ url string
 width,height,bitrate: number
 time: Date
 
-데이터 저장 용도
+역할: 데이터 저장
+
+## 5
+http://localhost:3001/analysis/count
+method GET
+param
+url :string
+
+return
+{
+count: number
+}
+영상의 조회수
+
+##6
+http://localhost:3001/analysis/resolution
+method GET
+param
+url :string
+
+return
+{
+type: string
+resolution:obj
+bitrate:obj
+}
+타입 해상도 비트레이트 보내줌
+
