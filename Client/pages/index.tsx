@@ -44,7 +44,11 @@ export default function Home() {
   return (
     <Layout>
       <div className="flex flex-col items-center">
-        <div className="pb-10 text-3xl">Media</div>
+        <div className="pb-10 text-3xl">
+          <div>
+            Media
+          </div>
+        </div>
         <div className="grid grid-cols-4 gap-x-4 gap-y-5 lg:gap-x-7">
           {VODUrls.map(
             (_, i) => {
@@ -111,6 +115,9 @@ export default function Home() {
               )
               }
           )}
+
+        </div>
+        <div className="pb-10 text-3xl">
           <Link
               key={200}
               href={{ pathname: `/analysis/list`}}
@@ -120,6 +127,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
+
     </Layout>
   );
 }

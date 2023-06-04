@@ -53,6 +53,10 @@ export default function List(){
             VODUrls.map(async (_, i) => {
                 const res = await fetch(`http://localhost:3001/analysis/count?url=${encodeURIComponent(VODUrls[i])}`, {
                     method: "GET",
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Cache-Control': "no-cache, no-store, must-revalidate"
+                    }
                 });
                 const result = await (res.json());
                 console.log("result",result.count);
@@ -81,17 +85,22 @@ export default function List(){
 
     return(
         <Layout>
-            <div className="flex flex-col items-center">
-                <div className="pb-10 text-3xl">Media</div>
-                <div className="grid grid-cols-4 gap-x-4 gap-y-5 lg:gap-x-7">
-                    <table>
+                <div className="w-full">
+                    <table className="min-w-full bg-white border border-gray-300">
+                        <thead>
+                            <tr>
+                                <th className="py-2 px-4 border-b">영상</th>
+                                <th className="py-2 px-4 border-b">조회수</th>
+                                <th className="py-2 px-4 border-b">TYPE</th>
+                            </tr>
+                        </thead>
                         <tbody>
                         {VODUrls.map(
                             (_, i) => {
                                 const encodedUrl = encodeURIComponent(VODUrls[i]);
                                 return (
                                     <tr>
-                                        <td>
+                                        <td className = "py-2 px-4 border-b text-center flex justify-center">
                                             <Link
                                                 key={i+20}
                                                 href={{ pathname: `/analysis/${encodedUrl}`, query: { id: i, url:encodedUrl}}}
@@ -118,8 +127,11 @@ export default function List(){
                                                 </div>
                                             </Link>
                                         </td>
-                                        <td>
+                                        <td className = "py-2 px-4 border-b text-center">
                                             {countList[i]}
+                                        </td>
+                                        <td className = "py-2 px-4 border-b text-center">
+                                            VOD
                                         </td>
                                     </tr>
 
@@ -131,7 +143,7 @@ export default function List(){
                                 const encodedUrl = encodeURIComponent(VODUrls[i]);
                                 return(
                                     <tr>
-                                        <td>
+                                        <td className = "py-2 px-4 border-b text-center flex justify-center">
                                             <Link
                                                 key={liveIdx+20}
                                                 href={{ pathname: `/analysis/${encodedUrl}`, query: { id: liveIdx, url:encodedUrl } }}
@@ -157,8 +169,11 @@ export default function List(){
                                                 </div>
                                             </Link>
                                         </td>
-                                        <td>
+                                        <td className = "py-2 px-4 border-b text-center">
                                             {countList[i+VODUrls.length]}
+                                        </td>
+                                        <td className = "py-2 px-4 border-b text-center">
+                                            LIVE
                                         </td>
                                     </tr>
                                 )
@@ -166,15 +181,7 @@ export default function List(){
                         )}
                         </tbody>
                     </table>
-                    <Link
-                        href={{ pathname: `../` }}
-                        replace
-                    >
-                        뒤로가기
-                    </Link>
-
                 </div>
-            </div>
         </Layout>
     )
 }
